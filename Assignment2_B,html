@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Assignment 2</title>
+  </head>
+  <body>
+    <header class="portal-header">
+      <div class="header-content">
+        <div class="brand">
+          <span class="brand-icon"></span>
+          <h1>PulseCare <span class="brand-sub">Triage Intake</span></h1>
+        </div>
+
+        <div class="header-status">
+          Active Queue: <span id="queue-count" class="badge-count">0</span>
+        </div>
+      </div>
+    </header>
+  </body>
+</html>
