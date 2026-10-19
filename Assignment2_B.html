@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Assignment 2</title>
+    <link rel="stylesheet" href="Style2.css" />
+  </head>
+  <body>
+    <header class="portal-header">
+      <div class="header-content">
+        <div class="brand">
+          <span class="brand-icon"></span>
+          <h1>Agri-Plus<span class="brand-sub">Greenhouse Statuses</span></h1>
+        </div>
+
+        <div class="header-status">
+          Active Queue: <span id="queue-count" class="badge-count">0</span>
+        </div>
+      </div>
+    </header>
+    <main class="portal-container">
+      <!-- LEft container for the input form fields -->
+      <aside class="panel form-panel">
+        <h2 class="panel-title">Record Greenhouse Status</h2>
+
+        <!-- hidden element which fires if user gives out 
+         of bounds input -->
+        <div
+          id="form-error-banner"
+          class="alert alert-danger hidden"
+          role="alert"
+        ></div>
+
+        <!-- FOrm input -->
+        <form action="#" id="vitals-form" novalidate>
+          <div class="form-group">
+            <label for="greenhouse-id" class="form-label"
+              >Greenhouse ID <span class="required">*</span></label
+            >
+            <input
+              type="text"
+              name="Client Name"
+              id="greenhouse-id"
+              class="form-control"
+              placeholder="e.g. Eleanor Vance"
+              required
+            />
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="systolic" class="form-label"
+                >Electric Conductivity (mS/cm)
+                <span class="required">*</span></label
+              >
+              <input
+                type="number"
+                name="EC"
+                id="EC"
+                class="form-control"
+                min="60"
+                max="260"
+                placeholder="120"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="diastolic" class="form-label"
+                >pH <span class="required">*</span></label
+              >
+              <input
+                type="number"
+                name="pH"
+                id="pH"
+                class="form-control"
+                min="40"
+                max="150"
+                placeholder="80"
+                required
+              />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="Temperature" class="form-label"
+                >Air Temperature (°F) <span class="required">*</span></label
+              >
+              <input
+                type="number"
+                name="Temperature"
+                id="Temperature"
+                class="form-control"
+                min="30"
+                max="240"
+                placeholder="72"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="Humidity" class="form-label"
+                >Relative Humidity (%) <span class="required">*</span></label
+              >
+              <input
+                type="number"
+                name="Humidity"
+                id="Humidity"
+                class="form-control"
+                min="50"
+                max="100"
+                placeholder="98"
+                required
+              />
+            </div>
+          </div>
+
+          <button
+            type="submit"
+            id="btn-submit"
+            class="btn btn-primary btn-block"
+          >
+            Log Vitals Record
+          </button>
+        </form>
+      </aside>
+
+      <!-- Right container for output : DYNAMIC CONTENT injection -->
+      <section class="panel records-panel">
+        <div class="records-header">
+          <h2 class="panel-title">Greenhouse Diagnostics</h2>
+          <button id="btn-clear-all" class="btn btn-outline-danger btn-sm">
+            Purge Queue
+          </button>
+        </div>
+
+        <!-- create two states: (1) initial loading (2) state after 
+         user interacts with UI -->
+        <div id="empty-state" class="empty-state">
+          <span class="empty-icon"></span>
+          <p>No active diagnostic records logged.</p>
+        </div>
+
+        <ul id="records-list" class="records-grid" aria-live="polite"></ul>
+      </section>
+    </main>
+  </body>
+  <footer class="portal-footer">
+    <p>&copy; 2026 CSI 3150 Dashboard Tutorial F2026.</p>
+  </footer>
+</html>
