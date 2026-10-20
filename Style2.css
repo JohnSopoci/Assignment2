@@ -1,13 +1,13 @@
 :root {
-  --bg-app: #0f172a;
-  --bg-panel: #1e293b;
+  --bg-app: #0f2a17;
+  --bg-panel: #27821d;
   --bg-card: #334155;
   --text-main: #f8fafc;
   --text-muted: #94a3b8;
   --border-color: #475569;
 
-  --primary: #0284c7;
-  --primary-hover: #0369a1;
+  --primary: #02c74d;
+  --primary-hover: #006836;
   --danger: #ef4444;
   --warning: #f59e0b;
   --success: #10b981;
