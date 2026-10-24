@@ -59,13 +59,13 @@
   // procsesing logic - to create dynamic badges for classification
   function evaluateRisk(Electric, pH, Temperature, Humidity) {
     if (
-      Electric < 0.2 ||
-      Electric > 4.5 ||
-      pH > 7.5 ||
-      pH < 5.0 ||
-      Humidity < 30 ||
-      Humidity > 90 ||
-      Temperature > 95 ||
+      Electric < 0.2 &&
+      Electric > 4.5 &&
+      pH > 7.5 &&
+      pH < 5.0 &&
+      Humidity < 30 &&
+      Humidity > 90 &&
+      Temperature > 95 &&
       Temperature < 55
     ) {
       return { level: "critical", label: "Critical" };
@@ -155,6 +155,7 @@
 
     // commit this to the memory
     saveRecords();
+    render();
 
     // reset the user form after data is committed to data store
     vitalsForm.reset();
